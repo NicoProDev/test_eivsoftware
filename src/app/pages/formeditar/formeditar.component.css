@@ -1,0 +1,45 @@
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 40%;
+    margin-left: 5px;
+    font-size: large;
+}
+button:hover{
+    background-color: #63a8df;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+}
+p {
+    font-size: large;
+}
+label {
+    font-size: large;
+}
+form {
+    
+    background:rgb(94, 180, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+input{
+    outline: none;
+    border: 0;
+    margin-bottom: 15px;
+
+}
+select{
+    margin-bottom: 15px;
+}
+.field{
+    width: 98%;
+    border: 1px solid grey;
+    padding: 5px 15px;
+    font-size: large;
+    border-radius: 7px;
+}

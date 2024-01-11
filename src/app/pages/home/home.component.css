@@ -1,0 +1,55 @@
+table {
+    width: 700px;
+    box-shadow: 15px black;
+    border: 1px black solid;
+    table-layout:auto;
+    border-collapse:separate;
+    font-weight: bold;
+    font-size: large;
+    
+}
+thead {
+    background-color: rgba(15, 15, 15, .3);
+    color: rgb(210, 200, 200);
+    text-transform: uppercase;
+}
+th{
+    border: 2px black solid;
+    padding: 20px 15px;
+    
+}
+.conteiner{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+    margin-bottom: 10px;
+}
+td{
+    padding: 15px;
+    border: solid 2px black;
+}
+tbody tr {
+    
+}
+tbody tr:hover{
+    background: rgba(245, 103, 150, .3);
+   
+}
+p {
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.conteiner_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+button{
+    background: transparent;
+    border: 0;
+    cursor:pointer;
+}

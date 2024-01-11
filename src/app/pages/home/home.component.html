@@ -1,0 +1,52 @@
+<p>LISTA DE VENDEDORES</p>
+<div class="conteiner">
+
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Usuario</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Observaciones</th>
+        <th>Localidad</th>
+        
+
+    </tr>
+</thead>
+<tbody>
+    <!-- <tr *ngFor="let vendedor of vendedores">
+        
+            <td *ngIf="vendedor.habilitado==true">{{vendedor.nombre}}</td>
+            <td *ngIf="vendedor.habilitado==true">{{vendedor.usuarioLogin}}</td>
+            <td *ngIf="vendedor.habilitado==true">{{vendedor.fechaNacimiento}}</td>
+            <td *ngIf="vendedor.habilitado==true">{{vendedor.observaciones}}</td>
+            <td *ngIf="vendedor.habilitado==true">{{vendedor.localidad.localidad}}</td>
+            <td *ngIf="vendedor.habilitado==true"><button routerLink="/editar/{{vendedor.id}}"> Modificar</button>
+            <td *ngIf="vendedor.habilitado==true"><button (click)="eliminarVendedor(vendedor)">Borrar</button></td>
+
+        
+    </tr> -->
+     <tr *ngFor="let vendedor of vendedores">
+        
+            <td >{{vendedor.nombre}}</td>
+            <td >{{vendedor.usuarioLogin}}</td>
+            <td >{{vendedor.fechaNacimiento}}</td>
+            <td >{{vendedor.observaciones}}</td>
+            <td >{{vendedor.localidad.localidad}}</td>
+            <td ><button routerLink="/editar/{{vendedor.id}}"> <mat-icon> border_color</mat-icon></button>
+            <td ><button (click)="eliminarVendedor(vendedor)"><mat-icon> delete</mat-icon></button></td>
+
+        
+    </tr>
+</tbody>
+
+</table>
+</div>
+<div class="conteiner">
+<button mat-raised-button color="primary" routerLink="/agregar">Agregar vendedor</button>
+
+</div>
+

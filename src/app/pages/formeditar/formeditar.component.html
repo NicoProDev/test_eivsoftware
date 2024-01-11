@@ -1,0 +1,68 @@
+<div class="conteiner">
+        <p>FORMULARIO PARA MODIFICAR AL VENDEDOR </p>
+        
+</div>
+<div class="conteiner">
+    <p>{{editando.nombre}}</p>
+</div>
+<div *ngIf="editando.id!=0" class="conteiner">
+    <p>FOTO</p>
+</div>
+<div *ngIf="editando.id==0" class="conteiner">
+    <p>FOTO No</p>
+</div>
+<div class="conteiner">
+<form [formGroup]="editForm" (ngSubmit)="modificarVendedor()">
+    <div>
+        <label for="">Nombre</label><br>
+        <input type="text" class="field"  formControlName="nombre" placeholder="{{editando.nombre}}" >
+    </div>
+     <div *ngIf="editForm?.get('nombre')?.errors && editForm?.get('nombre')?.dirty ">
+        El campo es obligatorio
+    </div>
+  
+    <div>
+        <label >Nombre de usuario</label><br>
+        <input type="text" class="field" formControlName="usuarioLogin" placeholder="{{editando.usuarioLogin}}">
+    </div>
+    <div *ngIf="editForm?.get('usuarioLogin')?.errors && editForm?.get('usuarioLogin')?.dirty" >
+        El campo es obligatorio
+    </div>
+    <div>
+        <label >Habilitado</label><br>
+        <select class="field" formControlName="habilitado">
+            <option *ngFor="let hab of habilitacion" [value]="hab.bool"> {{ hab.value }}</option>
+        </select>
+          <div *ngIf="editForm?.get('habilitado')?.errors && editForm?.get('habilitado')?.dirty">
+        El campo es obligatorio
+    </div>
+    </div>
+    <div>
+        <label >Fecha de Nacimiento (Formato YYYY-MM-DD)</label><br>
+        <input class="field" type="text" formControlName="fechaNacimiento" placeholder="{{editando.fechaNacimiento}}">
+    </div>
+       <div *ngIf="editForm?.get('fechaNacimiento')?.errors && editForm?.get('fechaNacimiento')?.dirty">
+        El campo es obligatorio
+    </div>
+    <div>
+        <label for="">Observaciones</label><br>
+        <input class="field" type="text" formControlName="observaciones" placeholder="{{editando.observaciones}}" >
+    </div>
+    <div>
+        <label>Localidad</label><br>
+        <select class="field" formControlName="localidad">
+            <option [value]="loc.localidad" *ngFor="let loc of localidades" > {{loc.localidad}}  </option>
+        </select>
+          <div *ngIf="editForm?.get('localidad')?.errors && editForm?.get('localidad')?.dirty">
+        El campo es obligatorio
+    </div>
+    </div>
+   <div class="conteiner">
+    <button mat-raised-button disabled  type="submit" *ngIf="editForm.invalid" >Modificar</button>
+    <button mat-raised-button color="primary" type="submit"  *ngIf="!editForm.invalid" [disabled]="editForm.invalid">Modificar</button>
+    <button mat-raised-button routerLink="/">Salir</button>
+</div>
+</form>
+</div>
+
+

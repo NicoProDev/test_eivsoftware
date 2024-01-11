@@ -1,0 +1,58 @@
+<div class="conteiner">
+<p>FORMULARIO PARA AGREGAR VENDEDOR</p>
+</div>
+<div class="conteiner">
+<form [formGroup]="myForm" (ngSubmit)="agregarVendedor()">
+    <div>
+        <label for="">Nombre</label><br>
+        <input type="text" class="field" formControlName="nombre">
+    </div>
+     <div *ngIf="myForm?.get('nombre')?.errors && myForm?.get('nombre')?.dirty ">
+        El campo es obligatorio
+    </div>
+  
+    <div>
+        <label >Nombre de usuario</label><br>
+        <input type="text" class="field" formControlName="usuarioLogin">
+    </div>
+    <div *ngIf="myForm?.get('usuarioLogin')?.errors && myForm?.get('usuarioLogin')?.dirty" >
+        El campo es obligatorio
+    </div>
+    <div>
+        <label >Habilitado</label><br>
+        <select class="field"  formControlName="habilitado">
+            <option *ngFor="let hab of habilitacion" [value]="hab.bool"> {{ hab.value }}</option>
+        </select>
+          <div *ngIf="myForm?.get('habilitado')?.errors && myForm?.get('habilitado')?.dirty">
+        El campo es obligatorio
+    </div>
+    </div>
+    <div>
+        <label >Fecha de Nacimiento (Formato YYYY-MM-DD)</label><br>
+        <input type="text" class="field"  formControlName="fechaNacimiento">
+    </div>
+       <div *ngIf="myForm?.get('fechaNacimiento')?.errors && myForm?.get('fechaNacimiento')?.dirty">
+        El campo es obligatorio
+    </div>
+    <div>
+        <label for="">Observaciones</label><br>
+        <input type="text" class="field" formControlName="observaciones">
+    </div>
+    <div>
+        <label>Localidad</label><br>
+        <select class="field"  formControlName="localidad">
+            <option  [value]="loc.localidad" *ngFor="let loc of localidades"> {{loc.localidad}}  </option>
+        </select>
+          <div *ngIf="myForm?.get('localidad')?.errors && myForm?.get('localidad')?.dirty">
+        El campo es obligatorio
+    </div>
+    </div>
+    <div class="conteiner">
+    <button mat-raised-button disabled  type="submit" *ngIf="myForm.invalid" >Agregar</button>
+    <button mat-raised-button color="primary" type="submit"  *ngIf="!myForm.invalid" [disabled]="myForm.invalid">Agregar</button>
+    <button mat-raised-button routerLink="/">Salir</button>
+</div>
+
+</form>
+
+</div>
